@@ -117,5 +117,5 @@ export class ScheduleService {
     return timeTableDetails;
   }
 
-  async scheduleCheckComplete(detail_idx: number) {}
+  // async scheduleCheckComplete(detail_idx: number) {}
 }

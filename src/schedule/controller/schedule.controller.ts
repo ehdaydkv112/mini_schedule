@@ -63,11 +63,11 @@ export class ScheduleController {
     return this.scheduleService.scheduleDetailDelete(timetable_idx, detail_idx, user);
   }
 
-  @ApiOperation({ summary: '체크 완료' })
-  @UseGuards(JwtAuthGuard)
-  @Post('check')
-  scheduleCheckComplete(@Param() param, @CurrentUser() user: Users) {
-    const detail_idx = parseInt(param.detail_idx);
-    return this.scheduleService.scheduleCheckComplete(detail_idx, user);
-  }
+  // @ApiOperation({ summary: '체크 완료' })
+  // @UseGuards(JwtAuthGuard)
+  // @Post('check')
+  // scheduleCheckComplete(@Param() param, @CurrentUser() user: Users) {
+  //   const detail_idx = parseInt(param.detail_idx);
+  //   return this.scheduleService.scheduleCheckComplete(detail_idx, user);
+  // }
 }
