@@ -116,4 +116,6 @@ export class ScheduleService {
       .getRawMany();
     return timeTableDetails;
   }
+
+  async scheduleCheckComplete(detail_idx: number) {}
 }
