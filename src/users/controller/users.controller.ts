@@ -1,17 +1,12 @@
 import { Body, ConsoleLogger, Controller, Get, Post, Req, Res, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Data } from 'aws-sdk/clients/firehose';
 import { Users } from 'output/entities/Users';
-import { catchError } from 'rxjs';
 import { CurrentUser } from 'src/common/decorators/currentUser.decorator';
 import { UserDto } from 'src/common/dto/user.dto';
 import { SuccessInterceptor } from 'src/common/interceptors/success.intercept';
 import { JwtAuthGuard } from 'src/common/jwt/jwt.guard';
-import { addAbortSignal } from 'stream';
 import { JoinRequestDto } from '../dto/join.request.dto';
 import { UsersService } from '../service/users.service';
-import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
-import { request } from 'http';
 
 @ApiTags('USERS')
 @Controller('users')
