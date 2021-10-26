@@ -9,7 +9,7 @@ export class UserDto {
     description: '아이디'
   })
     @IsNotEmpty()
-    @Length(1, 20)
+    @Length(0, 20)
     userName: string;
 
     @ApiProperty({
