@@ -56,11 +56,4 @@ export class UsersController {
     console.log('Controller logIn');
     return this.usersService.commonLogin(data);
   }
-
-  // @UseGuards(JwtAuthGuard)
-  // @Post('img')
-  // profileImgUpload(@Req() request, @Res() response, @CurrentUser() user: Users): Promise<void> {
-  //   console.log('Controller profileImgUpload');
-  //   return this.usersService.fileupload(request, response, user);
-  // }
 }

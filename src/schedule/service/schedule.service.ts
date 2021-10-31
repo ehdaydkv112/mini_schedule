@@ -44,6 +44,7 @@ export class ScheduleService {
   }
 
   async scheduleDetailGet(timetable_idx: number, user: Users) {
+    const timeTableTitle = await this.scheduleRepository.findOne({ where: { timetableIdx: timetable_idx } });
     const timeTableDetails = await this.scheduleDetailRepository
       .createQueryBuilder('timetable_detail')
       .select(['detail_idx', 'time_hour', 'time_min', 'content'])
@@ -51,7 +52,7 @@ export class ScheduleService {
       .andWhere('user_idx = :userIdx', { userIdx: user.userIdx })
       .orderBy('detail_idx')
       .getRawMany();
-    return timeTableDetails;
+    return { timeTableTitle, timeTableDetails };
   }
 
   async schedulePatch(data: ScheduleDto, timetable_idx: number, user: Users) {
